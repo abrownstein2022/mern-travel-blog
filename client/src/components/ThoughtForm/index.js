@@ -9,6 +9,7 @@ import Auth from '../../utils/auth';
 
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
+  const [thoughtCountry, setThoughtCountry] = useState('');
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -21,28 +22,31 @@ const ThoughtForm = () => {
           query: QUERY_THOUGHTS,
           data: { thoughts: [addThought, ...thoughts] },
         });
+        
+        // update me object's cache
+        const { me } = cache.readQuery({ query: QUERY_ME });
+        cache.writeQuery({
+          query: QUERY_ME,
+          data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
+        });
       } catch (e) {
         console.error(e);
       }
-
-      // update me object's cache
-      const { me } = cache.readQuery({ query: QUERY_ME });
-      cache.writeQuery({
-        query: QUERY_ME,
-        data: { me: { ...me, thoughts: [...me.thoughts, addThought] } },
-      });
     },
   });
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
 
+    const formData = {
+      thoughtText,
+      thoughtCountry,
+      thoughtAuthor: Auth.getProfile().data.username,
+    }
+
     try {
       const { data } = await addThought({
-        variables: {
-          thoughtText,
-          thoughtAuthor: Auth.getProfile().data.username,
-        },
+        variables: formData,
       });
 
       setThoughtText('');
@@ -85,6 +89,17 @@ const ThoughtForm = () => {
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={handleChange}
+              ></textarea>
+            </div>
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="thoughtCountry"
+                placeholder="country..."
+                value={thoughtCountry}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={e => setThoughtCountry(e.target.value)}
               ></textarea>
             </div>
 

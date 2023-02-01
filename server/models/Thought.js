@@ -19,25 +19,33 @@ const thoughtSchema = new Schema({
     default: Date.now,
     get: (timestamp) => dateFormat(timestamp),
   },
-  comments: [
-    {
-      commentText: {
-        type: String,
-        required: true,
-        minlength: 1,
-        maxlength: 280,
-      },
-      commentAuthor: {
-        type: String,
-        required: true,
-      },
-      createdAt: {
-        type: Date,
-        default: Date.now,
-        get: (timestamp) => dateFormat(timestamp),
-      },
-    },
-  ],
+  thoughtCountry: {
+    type: String,
+    required: false,
+    default: 'DEFAULT_MONGOOSE_SCHEMA_TEXT'
+  }
+  // comments: [
+  //   {
+  //     commentText: {
+  //       type: String,
+  //       required: true,
+  //       minlength: 1,
+  //       maxlength: 280,
+  //     },
+  //     commentAuthor: {
+  //       type: String,
+  //       required: true,
+  //     },
+  //     createdAt: {
+  //       type: Date,
+  //       default: Date.now,
+  //       get: (timestamp) => dateFormat(timestamp),
+  //     },
+  //   },
+  // ],
+}, 
+{
+  strict: false
 });
 
 const Thought = model('Thought', thoughtSchema);
