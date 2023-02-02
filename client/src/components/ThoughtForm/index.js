@@ -10,6 +10,9 @@ import Auth from '../../utils/auth';
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
   const [thoughtCountry, setThoughtCountry] = useState('');
+  const [thoughtCity, setThoughtCity] = useState('');
+  const [thoughtLandmark, setThoughtLandmark] = useState('');
+  const [thoughtRating, setThoughtRating] = useState(0);
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -41,6 +44,9 @@ const ThoughtForm = () => {
     const formData = {
       thoughtText,
       thoughtCountry,
+      thoughtCity,
+      thoughtLandmark,
+      thoughtRating,
       thoughtAuthor: Auth.getProfile().data.username,
     }
 
@@ -100,6 +106,44 @@ const ThoughtForm = () => {
                 className="form-input w-100"
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={e => setThoughtCountry(e.target.value)}
+              ></textarea>
+            </div>
+
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="thoughtCity"
+                placeholder="city..."
+                value={thoughtCity}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={e => setThoughtCity(e.target.value)}
+              ></textarea>
+            </div>
+
+
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="thoughtLandmark"
+                placeholder="landmark..."
+                value={thoughtLandmark}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={e => setThoughtLandmark(e.target.value)}
+              ></textarea>
+            </div>
+
+
+
+            <div className="col-12 col-lg-9">
+              <textarea
+                name="thoughtRating"
+                placeholder="rating..."
+                value={thoughtRating}
+                className="form-input w-100"
+                style={{ lineHeight: '1.5', resize: 'vertical' }}
+                onChange={e => setThoughtRating(parseInt(e.target.value) ?? 0)}
               ></textarea>
             </div>
 

@@ -37,8 +37,11 @@ const ThoughtList = ({
               )}
             </h4>
             <div className="card-body bg-light p-2">
-              <p>{thought.thoughtText}</p>
               <p>{thought.thoughtCountry}</p>
+              <p>{thought.thoughtCity}</p>
+              <p>{thought.thoughtLandmark}</p>
+              <p>{thought.thoughtRating}</p>
+              <p>{thought.thoughtText}</p>
             </div>
             <Link
               className="btn btn-primary btn-block btn-squared"
