@@ -6,6 +6,7 @@ import { ADD_THOUGHT } from '../../utils/mutations';
 import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
+import Rating from '../Rating';
 
 const ThoughtForm = () => {
   const [thoughtText, setThoughtText] = useState('');
@@ -69,6 +70,8 @@ const ThoughtForm = () => {
       setCharacterCount(value.length);
     }
   };
+
+
 
   return (
     <div>
@@ -136,7 +139,7 @@ const ThoughtForm = () => {
 
 
 
-            <div className="col-12 col-lg-9">
+            {/* <div className="col-12 col-lg-9">
               <textarea
                 name="thoughtRating"
                 placeholder="rating..."
@@ -145,7 +148,11 @@ const ThoughtForm = () => {
                 style={{ lineHeight: '1.5', resize: 'vertical' }}
                 onChange={e => setThoughtRating(parseInt(e.target.value) ?? 0)}
               ></textarea>
-            </div>
+            </div> */}
+
+            <Rating value={thoughtRating} onChange={setThoughtRating}/>
+
+            
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
