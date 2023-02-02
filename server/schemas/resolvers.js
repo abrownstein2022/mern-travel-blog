@@ -49,6 +49,9 @@ const resolvers = {
       return { token, user };
     },
     addThought: async (parent, args, context) => {
+      console.log('adding thought:', {
+        args
+      })
       if (context.user) {
         const thought = await Thought.create({
           ...args,

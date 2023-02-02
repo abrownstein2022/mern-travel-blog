@@ -9,6 +9,11 @@ export const QUERY_USER = gql`
       thoughts {
         _id
         thoughtText
+        thoughtAuthor
+        thoughtCountry
+        thoughtCity
+        thoughtLandmark
+        thoughtRating
         createdAt
       }
     }
@@ -21,6 +26,10 @@ export const QUERY_THOUGHTS = gql`
       _id
       thoughtText
       thoughtAuthor
+      thoughtCountry
+      thoughtCity
+      thoughtLandmark
+      thoughtRating
       createdAt
     }
   }
@@ -32,6 +41,10 @@ export const QUERY_SINGLE_THOUGHT = gql`
       _id
       thoughtText
       thoughtAuthor
+      thoughtCountry
+      thoughtCity
+      thoughtLandmark
+      thoughtRating
       createdAt
     }
   }
@@ -47,6 +60,10 @@ export const QUERY_ME = gql`
         _id
         thoughtText
         thoughtAuthor
+        thoughtCountry
+        thoughtCity
+        thoughtLandmark
+        thoughtRating
         createdAt
       }
     }

@@ -1,6 +1,6 @@
 const { gql } = require('apollo-server-express');
 
-
+// I Think  graphql uses this typedefinition file to configure the graphql explorer in the browser and type check mutations/queries
 
 const typeDefs = gql`
 type User {
@@ -16,6 +16,9 @@ type User {
     thoughtText: String
     thoughtAuthor: String
     thoughtCountry: String
+    thoughtCity: String
+    thoughtLandmark: String
+    thoughtRating: Int
     createdAt: String
   }
 
@@ -35,7 +38,7 @@ type User {
   type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
-    addThought(thoughtText: String!): Thought
+    addThought(thoughtText: String!, thoughtCountry: String!, thoughtCity: String!, thoughtLandmark: String!, thoughtRating: Int!): Thought
     removeThought(thoughtId: ID!): Thought
   }
 `;
