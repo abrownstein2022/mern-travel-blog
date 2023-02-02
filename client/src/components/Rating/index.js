@@ -16,7 +16,10 @@ const Rating = (props) => {
       style={{
         color: idx < rating ? 'orange' : 'black', 
         cursor: 'pointer', 
-        fontSize: '2rem' 
+        fontSize: '2rem',
+        //! using the presence of 'onChange' function to determine if the user can interact with the rating
+        // disables user input when you only provide a 'value' - like its only intended for display
+        pointerEvents: props.onChange ? 'all' : 'none'
       }} onClick={() => set(idx + 1)}
       >
         ★

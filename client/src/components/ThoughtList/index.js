@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Rating from '../Rating';
 
 const ThoughtList = ({
   thoughts,
@@ -37,10 +38,11 @@ const ThoughtList = ({
               )}
             </h4>
             <div className="card-body bg-light p-2">
+              <Rating value={thought.thoughtRating} />
+              {/* <p>{thought.thoughtRating}</p> */}
               <p>{thought.thoughtCountry}</p>
               <p>{thought.thoughtCity}</p>
               <p>{thought.thoughtLandmark}</p>
-              <p>{thought.thoughtRating}</p>
               <p>{thought.thoughtText}</p>
             </div>
             <Link
