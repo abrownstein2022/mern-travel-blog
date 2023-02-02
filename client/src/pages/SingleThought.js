@@ -6,6 +6,7 @@ import { useQuery } from '@apollo/client';
 
 
 import { QUERY_SINGLE_THOUGHT } from '../utils/queries';
+import ThoughtForm from '../components/ThoughtForm';
 
 const SingleThought = () => {
   // Use `useParams()` to retrieve value of the route parameter `:profileId`
@@ -30,17 +31,7 @@ const SingleThought = () => {
         </span>
       </h3>
       <div className="bg-light py-4">
-        <blockquote
-          className="p-4"
-          style={{
-            fontSize: '1.5rem',
-            fontStyle: 'italic',
-            border: '2px dotted #1a1a1a',
-            lineHeight: '1.5',
-          }}
-        >
-          {thought.thoughtText}
-        </blockquote>
+        <ThoughtForm {...thought} />
       </div>
 
     </div>

@@ -39,3 +39,19 @@ export const ADD_THOUGHT = gql`
     }
   }
 `;
+
+export const UPDATE_THOUGHT = gql`
+  mutation updateThought($thoughtId: String!, $thoughtText: String!, $thoughtCountry: String!, $thoughtCity: String!, $thoughtLandmark: String!, $thoughtRating: Int!) {
+    updateThought(thoughtId: $thoughtId, thoughtText: $thoughtText, thoughtCountry: $thoughtCountry, thoughtCity: $thoughtCity, thoughtLandmark: $thoughtLandmark, thoughtRating: $thoughtRating) {
+      _id
+      thoughtText
+      thoughtAuthor
+      thoughtCountry
+      thoughtCity
+      thoughtLandmark
+      thoughtRating
+      createdAt
+     
+    }
+  }
+`;

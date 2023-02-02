@@ -2,18 +2,18 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT } from '../../utils/mutations';
+import { ADD_THOUGHT, UPDATE_THOUGHT } from '../../utils/mutations';
 import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
 import Rating from '../Rating';
 
-const ThoughtForm = () => {
-  const [thoughtText, setThoughtText] = useState('');
-  const [thoughtCountry, setThoughtCountry] = useState('');
-  const [thoughtCity, setThoughtCity] = useState('');
-  const [thoughtLandmark, setThoughtLandmark] = useState('');
-  const [thoughtRating, setThoughtRating] = useState(0);
+const ThoughtForm = (props) => {
+  const [thoughtText, setThoughtText] = useState(props.thoughtText ?? '');
+  const [thoughtCountry, setThoughtCountry] = useState(props.thoughtCountry ?? '');
+  const [thoughtCity, setThoughtCity] = useState(props.thoughtCity ?? '');
+  const [thoughtLandmark, setThoughtLandmark] = useState(props.thoughtLandmark ?? '');
+  const [thoughtRating, setThoughtRating] = useState(props.thoughtRating ?? 0);
 
   const [characterCount, setCharacterCount] = useState(0);
 
@@ -39,7 +39,9 @@ const ThoughtForm = () => {
     },
   });
 
-  const handleFormSubmit = async (event) => {
+  const [updateThought, { error: updateError }] = useMutation(UPDATE_THOUGHT);
+
+  const handleFormSubmitAdd = async (event) => {
     event.preventDefault();
 
     const formData = {
@@ -62,6 +64,32 @@ const ThoughtForm = () => {
     }
   };
 
+  const handleFormSubmitEdit = async (event) => {
+    event.preventDefault();
+
+    const formData = {
+      thoughtId: props.thoughtId || props._id,
+      thoughtText,
+      thoughtCountry,
+      thoughtCity,
+      thoughtLandmark,
+      thoughtRating,
+      thoughtAuthor: Auth.getProfile().data.username,
+    }
+
+    try {
+      const { data } = await updateThought({
+        variables: formData,
+      });
+
+      setThoughtText('');
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+
+
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -75,7 +103,7 @@ const ThoughtForm = () => {
 
   return (
     <div>
-      <h3>What's on your techy mind?</h3>
+      <h3>{props.thoughtText ? `Editing thought: ${props._id ?? props.thoughtId}` : `What's on your techy mind?`}</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -88,7 +116,7 @@ const ThoughtForm = () => {
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={handleFormSubmit}
+            onSubmit={props.thoughtText ? handleFormSubmitEdit : handleFormSubmitAdd}
           >
             <div className="col-12 col-lg-9">
               <textarea

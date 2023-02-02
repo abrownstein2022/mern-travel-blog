@@ -39,6 +39,7 @@ type User {
     addUser(username: String!, email: String!, password: String!): Auth
     login(email: String!, password: String!): Auth
     addThought(thoughtText: String!, thoughtCountry: String!, thoughtCity: String!, thoughtLandmark: String!, thoughtRating: Int!): Thought
+    updateThought(thoughtId: ID!, thoughtText: String!, thoughtCountry: String!, thoughtCity: String!, thoughtLandmark: String!, thoughtRating: Int!): Thought
     removeThought(thoughtId: ID!): Thought
   }
 `;
