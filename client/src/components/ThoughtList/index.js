@@ -24,15 +24,15 @@ const ThoughtList = ({
                   className="text-light"
                   to={`/profiles/${thought.thoughtAuthor}`}
                 >
-                  {thought.thoughtAuthor} <br />
+                  
                   <span style={{ fontSize: '1rem' }}>
-                    had this thought on {thought.createdAt}
+                  {thought.thoughtAuthor}  created this review on {thought.createdAt}
                   </span>
                 </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
-                    You had this thought on {thought.createdAt}
+                    You created this review on {thought.createdAt}
                   </span>
                 </>
               )}
@@ -49,7 +49,7 @@ const ThoughtList = ({
               className="btn btn-primary btn-block btn-squared"
               to={`/thoughts/${thought._id}`}
             >
-              Edit this Thought
+              Edit this Review
             </Link>
           </div>
         ))}

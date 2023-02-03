@@ -25,13 +25,14 @@ const SingleThought = () => {
   return (
     <div className="my-3">
       <h3 className="card-header bg-dark text-light p-2 m-0">
-        {thought.thoughtAuthor} <br />
+        
         <span style={{ fontSize: '1rem' }}>
-          had this thought on {thought.createdAt}
+        {thought.thoughtAuthor}  created this review on {thought.createdAt}
         </span>
       </h3>
-      <div className="bg-light py-4">
-        <ThoughtForm {...thought} />
+      <div className="bg-light py-4">  
+      {/* alexis 2/2/23 I may have accidentally messed up the line below attribute="value"  */}
+        <ThoughtForm {...thought} attribute="value" />
       </div>
 
     </div>
