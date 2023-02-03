@@ -9,13 +9,13 @@ const Header = () => {
     Auth.logout();
   };
   return (
-    <header className="bg-primary text-light mb-4 py-3 flex-row align-center">
+    <header className="bg-primary text-light mb-1 py-1 flex-row align-center">
       <div className="container flex-row justify-space-between-lg justify-center align-center">
         <div>
           <Link className="text-light" to="/">
-            <h1 className="m-0">Travel Reviews for You</h1>
+            <h1 className="m-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Travel Reviews for You</h1>
           </Link>
-          <p className="m-0">Share your travel experiences with your fellow travelers!</p>
+          <h5 className="m-0">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Share your travel experiences with your fellow travelers!</h5>
         </div>
         <div>
           {Auth.loggedIn() ? (
