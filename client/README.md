@@ -2,7 +2,7 @@
 ![license](https://img.shields.io/badge/license-MIT-black)
 
 Deployed site on Heroku:
-https://cms-tech-blog.herokuapp.com/ ******************************update this
+https://cms-tech-blog.herokuapp.com/ ******************************update this************
      
 ## Table of Contents
 
@@ -18,11 +18,10 @@ https://cms-tech-blog.herokuapp.com/ ******************************update this
 
 ## Description
 ```md
-The task for this assignment was to build a responsive, interactive application using GraphQL with a node.js and express.js server.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  The application was deployed to Heroku with seed data.
+The task for this assignment was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) for authentication.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  The application was deployed to Heroku with seed data.
 ```
 
 **User Story**
-
 ```md
 As a person who loves to travel
 I want a website to create reviews to share my travel experiences and learn from the travel experiences of others
@@ -47,8 +46,6 @@ THEN my user credentials are saved and I am logged into the site
 WHEN I revisit the site at a later time and choose to sign in
 THEN I am prompted to enter my email and password
 WHEN I am signed in to the site
-<!-- THEN I see navigation links for the homepage, the dashboard, and the option to log out
-WHEN I click on the homepage option in the navigation -->
 THEN I am taken to my profile page and presented with existing reviews that I created (if any) that include information about the review and the date/time I created it
 WHEN I click on the "Edit this Review" link on my existing reviews
 THEN I am presented with the update screen so I can make change to my review I want or I can delete the review entirely
@@ -66,47 +63,41 @@ WHEN I am idle on the site for more than 5 minutes
 THEN I must log in again to be able to add new reviews and update/delete my existing reviews
 ```
 
-## Installation
+## Installation  (if you are going to clone my repo)
 <!-- audience is other developers -->
 
-1. Clone this GitHub repo https://github.com/abrownstein2022/ch14-mvc-cms-blog
+1. Clone this GitHub repo https://github.com/abrownstein2022/react-travel-blog  ***change to MERN-travel-blog****
 <!-- Check out the gh cli tool from github -->
-```bash
-$ gh repo clone https://github.com/abrownstein2022/ch14-mvc-cms-blog
+```bash  
+$ gh repo clone https://github.com/abrownstein2022/react-travel-blog   ***change to MERN-travel-blog****
 ```
 
 2. From the terminal, install npm:
 ```bash
-$ npm install
+$ npm installi
 ``` 
-
-3. Log into mysql, create the database on your local machine and seed the database:
-
-```bash
-$mysql -u root -p < db/schema.sql
-$npm run seed-database
-```
 
 <!-- [] implies user input 
  mysql> restaurant_mgr < C:\[filename].sql
 -->
 
-4. Start the local server and watch for file changes to automatically restart server (nodemon):
-```bash
-$ npm run watch 
-```
-  
-5. Open browser to test any changes you make to the application after cloning.
-
 
 ## Usage  
-The tech blog is deployed on Heroku and has been seeded with initial seed data.  Click on the link below to start the application.  Or clone and use from your vs-code.
-https://cms-tech-blog.herokuapp.com/
+This application has been deployed on Heroku and has initial seed data.  Click on the Heroku link below to start the application.  Or clone and use from your vs-code.
 
-Or to start with nodemon
+1. Open the app using Heroku https://XXXXXXXX.herokuapp.com *******************************update this
 
+
+Or to run in terminal with 2 terminal sessions
+
+1. First terminal session to run MongoDB/Mongoose ODM
 ```bash
-$npm run dev
+$ mongod
+```$
+
+1. Second terminal session to run node
+```bash
+$ npm run develop
 ```
 
 **The screenshots below show the functionality of the application:**<br>
@@ -156,7 +147,7 @@ Display dashboard after new post has been deleted.
 ## Credits
 
 ```md
-Alexis Brownstein, Wyzant tutor: Mike
+Alexis Brownstein, Bootcamp tutor: Phil, Wyzant tutor: Mike
 ```
 
 ## License
@@ -195,9 +186,9 @@ _underline_
 Features for *future* development
  -->
 **The main features in this project are:**<br> 
-1. Uses Node.js, handlebars, sequelize/mySQL, npm for authentication, Heroku for deployed website
+1. MERN stack: uses MongoDB/Mongoose ODM, Express.js, React, Node.js, JWT for authentication, Heroku for deployed website
 1. Example screenshots with description of application functionality 
-1. Necessary MVC folder structure 
+1. Necessary MERN folder structure and setup with client/server 
 1. Professional README
 1. User credentials saved to log into the site
 1. Timeout after 5 minutes of inactivity
@@ -216,5 +207,5 @@ I can be reached at alexis@drdatabase.com.
 
 This GitHub repo can be found at:
   
-https://github.com/abrownstein2022/ch14-mvc-cms-blog
+https://github.com/abrownstein2022/react-travel-blog  ***change to MERN-travel-blog****
 
