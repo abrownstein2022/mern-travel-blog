@@ -1,70 +1,220 @@
-# Getting Started with Create React App
+# MERN/React Travel Blog
+![license](https://img.shields.io/badge/license-MIT-black)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Deployed site on Heroku:
+https://cms-tech-blog.herokuapp.com/ ******************************update this
+     
+## Table of Contents
 
-## Available Scripts
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Credits](#credits)
+- [License](#license)
+- [Features](#features)
+- [How-to-Contribute](#how-to-contribute)
+- [Tests](#tests)
+- [Questions](#questions)
 
-In the project directory, you can run:
+## Description
+```md
+The task for this assignment was to build a responsive, interactive application using GraphQL with a node.js and express.js server.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  The application was deployed to Heroku with seed data.
+```
 
-### `yarn start`
+**User Story**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```md
+As a person who loves to travel
+I want a website to create reviews to share my travel experiences and learn from the travel experiences of others
+SO THAT I can plan my future travel destinations
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```
 
-### `yarn test`
+**Acceptance Criteria**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```md
+GIVEN a MERN-stack single-page application
+WHEN I visit the site for the first time
+THEN I am presented with the homepage, which includes existing reviews if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
+WHEN I click on the homepage option
+THEN I am taken to the homepage
+WHEN I click on any other links in the navigation
+THEN I am prompted to either sign up or log in
+WHEN I choose to sign up
+THEN I am prompted to enter my email address, username and password
+WHEN I click on the sign-up link
+THEN my user credentials are saved and I am logged into the site
+WHEN I revisit the site at a later time and choose to sign in
+THEN I am prompted to enter my email and password
+WHEN I am signed in to the site
+<!-- THEN I see navigation links for the homepage, the dashboard, and the option to log out
+WHEN I click on the homepage option in the navigation -->
+THEN I am taken to my profile page and presented with existing reviews that I created (if any) that include information about the review and the date/time I created it
+WHEN I click on the "Edit this Review" link on my existing reviews
+THEN I am presented with the update screen so I can make change to my review I want or I can delete the review entirely
+WHEN I scroll to the bottom of my profile page
+THEN I can add a new review  ***********add link next to edit review for Add and DELETE so user doesn't have to scroll down********
+WHEN I click on the button to add a new blog post
+THEN I see all the information fields for which I can enter data, including rating the place I am reviewing
+WHEN I click on the Add Review button to create a new review
+THEN all my review data is saved and I am taken back to my profile page and can see the new review I just created
+WHEN I click on the delete review button
+THEN I am able to delete my review and am taken back to my updated profile page
+WHEN I click on the logout option in the navigation
+THEN I am signed out of the site
+WHEN I am idle on the site for more than 5 minutes
+THEN I must log in again to be able to add new reviews and update/delete my existing reviews
+```
 
-### `yarn build`
+## Installation
+<!-- audience is other developers -->
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone this GitHub repo https://github.com/abrownstein2022/ch14-mvc-cms-blog
+<!-- Check out the gh cli tool from github -->
+```bash
+$ gh repo clone https://github.com/abrownstein2022/ch14-mvc-cms-blog
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. From the terminal, install npm:
+```bash
+$ npm install
+``` 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Log into mysql, create the database on your local machine and seed the database:
 
-### `yarn eject`
+```bash
+$mysql -u root -p < db/schema.sql
+$npm run seed-database
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+<!-- [] implies user input 
+ mysql> restaurant_mgr < C:\[filename].sql
+-->
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+4. Start the local server and watch for file changes to automatically restart server (nodemon):
+```bash
+$ npm run watch 
+```
+  
+5. Open browser to test any changes you make to the application after cloning.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Usage  
+The tech blog is deployed on Heroku and has been seeded with initial seed data.  Click on the link below to start the application.  Or clone and use from your vs-code.
+https://cms-tech-blog.herokuapp.com/
 
-## Learn More
+Or to start with nodemon
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+$npm run dev
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+**The screenshots below show the functionality of the application:**<br>
+Homepage opens for all users showing all posts and comments but no one can update data without logging in.
+![example image 1 homepage](./public/images/ch14-screen1-homepage.png)
 
-### Code Splitting
+User must register on the website to enter posts, update and delete their posts, and add comments to other user posts.
+![example image 2 signup or login](./public/images/ch14-screen2-signup-or-login.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+New user signup.
+![example image 3 new user signup](./public/images/ch14-screen3-new-user-signup.png)
 
-### Analyzing the Bundle Size
+Dashboard displays after user login, showing the logged in user's posts.
+![example image 4 new user dashboard](./public/images/ch14-screen4-new-user-dashboard.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+New user's first blog post.
+![example image 5 new user first blog post](./public/images/ch14-screen5-new-user-first-blog-post.png)
 
-### Making a Progressive Web App
+New user's second blog post.
+![example image 6 new user dashboard after first blog post](./public/images/ch14-screen6-new-user-dashboard-after-first-blog-post.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Dashboard display of new user after 2 new posts added.
+![example image 7 dashboard after blog post 2](./public/images/ch14-screen7-dashboard-after-post-2.png)
 
-### Advanced Configuration
+New user comments on another user's post.
+![example image 8 comment on another post](./public/images/ch14-screen8-comment-on-another-post.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+Homepage display after new user entered comments on another user's post.
+![example image 9 comment on someone else's post](./public/images/ch14-screen9-comment-on-someone-elses-post.png)
 
-### Deployment
+Display posted comment.
+![example image 10 posted comment](./public/images/ch14-screen10-posted-comment.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+New user updates their own post.
+![example image 11 update data](./public/images/ch14-screen11-update-data.png)
 
-### `yarn build` fails to minify
+Display shows latest update works.
+![example image 12 update screen works](./public/images/ch14-screen12-update-works.png)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The new user deletes one of their posts.<br>
+![example image 13 delete post](./public/images/ch14-screen13-delete-post.png)
+
+Display dashboard after new post has been deleted.
+![example image 14 dashboard after delete own post](./public/images/ch14-screen14-dashboard-after-delete.png)
+
+
+## Credits
+
+```md
+Alexis Brownstein, Wyzant tutor: Mike
+```
+
+## License
+
+ ```md
+ MIT 
+```
+
+Link to license text:
+https://opensource.org/licenses/mit-license
+
+
+![badge](https://img.shields.io/badge/license-mit-black)
+
+
+## Features 
+
+<!-- 
+# h1
+###### h6
+**bold**
+*italic*
+_underline_
+
+| key | value |
+|-|-|
+| name | 'bob' |
+
+
+- list
+- items
+
+1. numberd
+1. list
+1. all ones - automatic numbering
+Features for *future* development
+ -->
+**The main features in this project are:**<br> 
+1. Uses Node.js, handlebars, sequelize/mySQL, npm for authentication, Heroku for deployed website
+1. Example screenshots with description of application functionality 
+1. Necessary MVC folder structure 
+1. Professional README
+1. User credentials saved to log into the site
+1. Timeout after 5 minutes of inactivity
+## How-to-Contribute
+
+N/A
+
+## Tests
+N/A
+
+## Questions
+
+Feel free to contact me with any questions.
+
+I can be reached at alexis@drdatabase.com.
+
+This GitHub repo can be found at:
+  
+https://github.com/abrownstein2022/ch14-mvc-cms-blog
+
