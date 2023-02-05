@@ -142,7 +142,7 @@ The new user deletes one of their posts.<br>
 
 Display dashboard after new post has been deleted.
 ![example image 14 dashboard after delete own post](./public/images/ch14-screen14-dashboard-after-delete.png)
-
+  
 
 ## Credits
 
