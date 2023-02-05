@@ -1,74 +1,50 @@
 [
   {
-    "reviewCountry": "France",
-    "reviewCity": "Nice",
-    "reviewLandmark": "",
-    "reviewText": "Nice has a milder climate and sometimes even reach 70 in the winter.",
-    "reviewRating": 5,
-    "reviewAuthor": "Max Kanat-Alexander"
+    "thoughtCountry": "France",
+    "thoughtCity": "Nice",
+    "thoughtLandmark": "",
+    "thoughtText": "Nice has a milder climate and sometimes even reaches 70 in the winter.",
+    "thoughtRating": 4,
+    "thoughtAuthor": "alexis"
   },
   {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "Eiffel Tower",
-    "reviewText": "The Eiffel Tower is so beautiful when it is lit at night!",
-    "reviewRating": 5,
-    "reviewAuthor": "Why The Lucky Stiff"
+    "thoughtCountry": "France",
+    "thoughtCity": "Paris",
+    "thoughtLandmark": "Eiffel Tower",
+    "thoughtText": "The Eiffel Tower is so beautiful when it is lit at night!",
+    "thoughtRating": 5,
+    "thoughtAuthor": "justin"
   },
   {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5,
-    "reviewAuthor": "Kent Beck"
+    "thoughtCountry": "Morocco",
+    "thoughtCity": "Chefchouen",
+    "thoughtLandmark": "",
+    "thoughtText": "I understand why it is called the blue city!  So many beautiful shades of blue on the building and walkways with murals too!",
+    "thoughtRating": 5,
+    "thoughtAuthor": "alexis"
   },
   {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5,
-    "reviewAuthor": "Edward V. Berard"
+    "thoughtCountry": "Costa Rica",
+    "thoughtCity": "Punta Cana",
+    "thoughtLandmark": "",
+    "thoughtText": "Beautiful country but the roads can be really tough to use because they are not paved.",
+    "thoughtRating": 3,
+    "thoughtAuthor": "mike"
   },
   {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5,
-    "reviewAuthor": "Alan Kay"
+    "thoughtCountry": "England",
+    "thoughtCity": "London",
+    "thoughtLandmark": "",
+    "thoughtText": "Fish & Chips - yummy!  Many beautiful sites to see and, of course, there's the royal family!",
+    "thoughtRating": 4,
+    "thoughtAuthor": "mike"
   },
   {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5,
-    "reviewAuthor": "C.A.R. Hoare"
-  },
-  {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5, 
-    "reviewAuthor": "David Thomas"
-  },
-  {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5,
-    "reviewAuthor": "Donald Knuth"
-  },
-  {
-    "reviewCountry": "France",
-    "reviewCity": "Paris",
-    "reviewLandmark": "",
-    "reviewText": "",
-    "reviewRating": 5, 
-    "reviewAuthor": "Lernantino"
+    "thoughtCountry": "Cuba",
+    "thoughtCity": "Trinidad",
+    "thoughtLandmark": "",
+    "thoughtText": "Colorful town with beautiful weather and people, wonderful restaurants and plenty of shops and music all around!",
+    "thoughtRating": 5,
+    "thoughtAuthor": "justin"
   }
 ]

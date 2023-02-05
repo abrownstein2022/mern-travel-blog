@@ -34,24 +34,20 @@ SO THAT I can plan my future travel destinations
 ```md
 GIVEN a MERN-stack single-page application
 WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes existing reviews if any have been posted; navigation links for the homepage and the dashboard; and the option to log in
-WHEN I click on the homepage option
-THEN I am taken to the homepage
-WHEN I click on any other links in the navigation
-THEN I am prompted to either sign up or log in
+THEN I am presented with the homepage, which includes existing reviews if any have been posted, and navigation buttons to login or signup
+WHEN I click on the Edit Review button on any existing reviews
+THEN I am taken to a page indicating I must log in or signup
 WHEN I choose to sign up
-THEN I am prompted to enter my email address, username and password
-WHEN I click on the sign-up link
+THEN I am prompted to enter my email address, username and password, and then I am logged into the site
+WHEN I choose to log in
 THEN my user credentials are saved and I am logged into the site
 WHEN I revisit the site at a later time and choose to sign in
 THEN I am prompted to enter my email and password
 WHEN I am signed in to the site
-THEN I am taken to my profile page and presented with existing reviews that I created (if any) that include information about the review and the date/time I created it
+THEN I am taken to my user profile page and presented with a screen to add new reviews or update existing reviews that I created (if any)
 WHEN I click on the "Edit this Review" link on my existing reviews
-THEN I am presented with the update screen so I can make change to my review I want or I can delete the review entirely
-WHEN I scroll to the bottom of my profile page
-THEN I can add a new review  ***********add link next to edit review for Add and DELETE so user doesn't have to scroll down********
-WHEN I click on the button to add a new blog post
+THEN I am presented with an update screen so I can change my review or I can delete the review entirely
+WHEN I click on the Add Review button
 THEN I see all the information fields for which I can enter data, including rating the place I am reviewing
 WHEN I click on the Add Review button to create a new review
 THEN all my review data is saved and I am taken back to my profile page and can see the new review I just created
@@ -59,8 +55,8 @@ WHEN I click on the delete review button
 THEN I am able to delete my review and am taken back to my updated profile page
 WHEN I click on the logout option in the navigation
 THEN I am signed out of the site
-WHEN I am idle on the site for more than 5 minutes
-THEN I must log in again to be able to add new reviews and update/delete my existing reviews
+WHEN I logged in but am idle on the site for more than 5 minutes
+THEN I am automatically logged out and must log in again to be able to add new reviews and update/delete my existing reviews
 ```
 
 ## Installation  (if you are going to clone my repo)
@@ -90,14 +86,14 @@ This application has been deployed on Heroku and has initial seed data.  Click o
 
 Or to run in terminal with 2 terminal sessions
 
-First terminal session to run MongoDB/Mongoose ODM and seed data
+First terminal session to run MongoDB/Mongoose ODM
 ```bash
 $ mongod
-$ npm run seed
 ```
 
-Second terminal session to run node
+Second terminal session to run node and seed data
 ```bash
+$ npm run seed
 $ npm run develop
 ```
 
