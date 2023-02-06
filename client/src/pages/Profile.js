@@ -48,6 +48,7 @@ const Profile = () => {
             title={`${user.username}'s thoughts...`}
             showTitle={false}
             showUsername={false}
+            showEdit={true}
           />
         </div>
         {!userParam && (

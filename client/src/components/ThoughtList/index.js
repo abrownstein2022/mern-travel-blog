@@ -7,6 +7,7 @@ const ThoughtList = ({
   title,
   showTitle = true,
   showUsername = true,
+  showEdit = false
 }) => {
   if (!thoughts.length) {
     return <h3>No Reviews Yet</h3>;
@@ -20,15 +21,16 @@ const ThoughtList = ({
           <div key={thought._id} className="card mb-3">
             <h4 className="card-header bg-primary2 text-light p-2 m-0">
               {showUsername ? (
-                <Link
-                  className="text-light"
-                  to={`/profiles/${thought.thoughtAuthor}`}
-                >
-                  
-                  <span style={{ fontSize: '1rem' }}>
-                  {thought.thoughtAuthor}  created this review on {thought.createdAt}
-                  </span>
-                </Link>
+                // <Link
+                //   className="text-light"
+                //   to={`/profiles/${thought.thoughtAuthor}`}
+                // >
+                  <div  className="text-light">
+                    <span style={{ fontSize: '1rem' }}>
+                    {thought.thoughtAuthor}  created this review on {thought.createdAt}
+                    </span>
+                  </div>
+                // </Link>
               ) : (
                 <>
                   <span style={{ fontSize: '1rem' }}>
@@ -45,12 +47,14 @@ const ThoughtList = ({
               <p>{thought.thoughtLandmark}</p>
               <p>{thought.thoughtText}</p>
             </div>
-            <Link
+            {
+            !showEdit ? null : <Link
               className="btn btn-primary btn-block btn-squared"
               to={`/thoughts/${thought._id}`}
             >
               Edit this Review
             </Link>
+            }
           </div>
         ))}
     </div>
