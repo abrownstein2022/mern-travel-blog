@@ -32,7 +32,7 @@ const SingleThought = () => {
       </h3>
       <div className="bg-light py-4">  
       {/* alexis 2/2/23 I may have accidentally messed up the line below attribute="value"  */}
-        <ThoughtForm {...thought} attribute="value" />
+        <ThoughtForm {...thought} edit={true} />
       </div>
 
     </div>

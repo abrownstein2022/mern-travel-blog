@@ -103,7 +103,7 @@ const ThoughtForm = (props) => {
 
   return (
     <div>
-      <h3>{props.thoughtText ? `Editing review: ${props._id ?? props.thoughtId}` : `What amazing country/city would you like to review?`}</h3>
+      <h3>{props.edit ? `Editing review: ${props.thoughtCity} ${props.thoughtCountry}` : `What amazing country/city would you like to review?`}</h3>
 
       {Auth.loggedIn() ? (
         <>
@@ -116,7 +116,7 @@ const ThoughtForm = (props) => {
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={props.thoughtText ? handleFormSubmitEdit : handleFormSubmitAdd}
+            onSubmit={props.edit ? handleFormSubmitEdit : handleFormSubmitAdd}
           >
             <div className="col-12 col-lg-9">
               <textarea

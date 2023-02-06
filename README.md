@@ -70,7 +70,7 @@ $ gh repo clone https://github.com/abrownstein2022/react-travel-blog   ***change
 
 2. From the terminal, install npm:
 ```bash
-$ npm installi
+$ npm i
 ``` 
 
 <!-- [] implies user input 
