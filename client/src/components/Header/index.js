@@ -10,7 +10,7 @@ const Header = () => {
   };
   return (
     <>
-
+ 
     <header id='main-header'>
         <div className='content'>
           <div className="text-light">
