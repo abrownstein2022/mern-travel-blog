@@ -69,23 +69,60 @@ const resolvers = {
     },
 
     updateThought: async (parent, args, context) => {
-      console.log('adding thought:', {
+      console.log('updating thought:', {
         args
       })
-      if (context.user) {
-        const thought = await Thought.findOneAndUpdate({where: { _id: thoughtId }}, {
-          ...args,
-          thoughtAuthor: context.user.username,
-        });
 
-        await User.findOneAndUpdate(
-          { _id: context.user._id },
-          { $addToSet: { thoughts: thought._id } }
-        );
+      // orignal way
+      // if(hasUser){
+      //   // do stuff
+      // }
 
-        return thought;
-      }
-      throw new AuthenticationError('You need to be logged in!');
+      // // new guard block way
+      // if(!hasUser) return
+      // if(!hasNamer) return
+      // if(!hasTitle) return
+
+      if (!context.user)  throw new AuthenticationError('You must be logged in to update reviews!');
+
+
+
+
+
+
+        try{
+
+          console.log('updating thought in db...')
+          //~ MONGOOOSE DOES NOT USE THE { where: {} } OPERATOR
+          //~ SEQUELIZE DOES
+          const thought = await Thought.findOneAndUpdate({ _id: args.thoughtId }, {
+            ...args,
+            thoughtAuthor: context.user.username,
+          },{
+            new: true,
+            returnDocument: 'after',
+          });
+
+
+          if(!thought){
+            console.log('No thought was returned:', thought)
+          }
+          
+          console.log('updating user thoughts in db...')
+            await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $addToSet: { thoughts: thought._id } }
+            );
+
+          console.log('Yhoughts and user updated!')
+            
+            return thought;
+          }catch(err){
+            console.log(err)
+          }
+      
+
+     
     },
 
     removeThought: async (parent, { thoughtId }, context) => {

@@ -65,10 +65,11 @@ const ThoughtForm = (props) => {
   };
 
   const handleFormSubmitEdit = async (event) => {
+    console.log('attempting to update review......')
     event.preventDefault();
 
     const formData = {
-      thoughtId: props.thoughtId || props._id,
+      thoughtId: props.thoughtId ?? props._id,
       thoughtText,
       thoughtCountry,
       thoughtCity,
@@ -81,6 +82,8 @@ const ThoughtForm = (props) => {
       const { data } = await updateThought({
         variables: formData,
       });
+
+      console.log('updated review:', formData, data)
 
       setThoughtText('');
     } catch (err) {
@@ -116,7 +119,7 @@ const ThoughtForm = (props) => {
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={props.edit ? handleFormSubmitEdit : handleFormSubmitAdd}
+            onSubmit={function(e){ return props.edit ? handleFormSubmitEdit(e) : handleFormSubmitAdd(e) }}
           >
             <div className="col-12 col-lg-9">
               <textarea
@@ -184,7 +187,7 @@ const ThoughtForm = (props) => {
 
             <div className="col-12 col-lg-3">
               <button className="btn btn-primary btn-block py-3" type="submit">
-                Add Review
+                {props.edit ? `Update` : `Add`} Review
               </button>
             </div>
             {error && (

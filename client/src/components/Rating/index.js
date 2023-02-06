@@ -13,6 +13,7 @@ const Rating = (props) => {
   
     {l.map((x, idx) => 
       <div 
+      key={idx}
       style={{
         color: idx < rating ? 'orange' : 'black', 
         cursor: 'pointer', 
