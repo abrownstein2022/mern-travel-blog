@@ -1,0 +1,43 @@
+#main-header {
+    background-color: #A1d4f3 !important;
+    background-image: url(../src/travel-image2.png);
+    background-repeat: no-repeat;
+    background-size: 30% auto;
+    background-position: -20% bottom;
+    /* make the container a flexbox */
+    display: flex;
+    /* set the flex dir - refault is row, but watch out for overrides */
+    flex-direction: row;
+    /* center the items vertically like __---__ */
+    /* when flex direction is column - the whole div is rotated 90 degrees
+    so 'align-items' becomes horizontal / justify becomes vertical */
+    align-items: center;
+    /* center tthe content */
+    justify-content: center;
+    /* could provide padding - but likely to change with screen size if using correct % or rem unints */
+    /* just give it a decent min height - big enough for the image */
+    min-height: 12rem;
+    padding: 0;
+    padding-left: max(16rem, 20vw);
+    margin-bottom: 2rem;
+}
+
+
+
+/* max width means apply these styles to all sizes less than or equal to 992 (mobile) */
+@media screen and (max-width: 992px) {
+    #main-header{
+        flex-direction: column;
+        height: 25rem;
+        align-items: center;
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    #main-header .content {
+        text-decoration: none !important;
+        text-align: center;
+        max-width: 70vw;
+    }
+
+}

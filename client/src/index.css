@@ -926,9 +926,9 @@ a:hover {
 /* alexis 2/2/23 */
 .bg-primary {
   background-color: #A1d4f3 !important;
-  background-image: url(../src/travel-image2.png);
+  /* background-image: url(../src/travel-image2.png);
   background-repeat: no-repeat;
-  background-size: 600px 300px;
+  background-size: 600px 300px; */
 }
 /* alexis 2/2/23 */
 .bg-primary2 {
