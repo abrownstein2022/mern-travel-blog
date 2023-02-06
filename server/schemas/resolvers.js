@@ -126,7 +126,7 @@ const resolvers = {
     },
 
     removeThought: async (parent, { thoughtId }, context) => {
-      if (context.user) {
+      if (!context.user)  throw new AuthenticationError('You need to be logged in!');
         const thought = await Thought.findOneAndDelete({
           _id: thoughtId,
           thoughtAuthor: context.user.username,
@@ -137,9 +137,9 @@ const resolvers = {
           { $pull: { thoughts: thought._id } }
         );
 
-        return thought;
-      }
-      throw new AuthenticationError('You need to be logged in!');
+        return true;
+      
+     
     },
 
   },

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 
-import { ADD_THOUGHT, UPDATE_THOUGHT } from '../../utils/mutations';
+import { ADD_THOUGHT, UPDATE_THOUGHT, REMOVE_THOUGHT } from '../../utils/mutations';
 import { QUERY_THOUGHTS, QUERY_ME } from '../../utils/queries';
 
 import Auth from '../../utils/auth';
@@ -40,6 +40,15 @@ const ThoughtForm = (props) => {
   });
 
   const [updateThought, { error: updateError }] = useMutation(UPDATE_THOUGHT);
+  const [deleteThought, { error: deleteError }] = useMutation(REMOVE_THOUGHT);
+
+  const handleDelete = async () => {
+    const { data } = await deleteThought({
+      variables: {
+        thoughtId: props.thoughtId ?? props._id,
+      },
+    });
+  }
 
   const handleFormSubmitAdd = async (event) => {
     event.preventDefault();
@@ -119,7 +128,7 @@ const ThoughtForm = (props) => {
           </p>
           <form
             className="flex-row justify-center justify-space-between-md align-center"
-            onSubmit={function(e){ return props.edit ? handleFormSubmitEdit(e) : handleFormSubmitAdd(e) }}
+            // onSubmit={function(e){ return props.edit ? handleFormSubmitEdit(e) : handleFormSubmitAdd(e) }}
           >
             <div className="col-12 col-lg-9">
               <textarea
@@ -184,12 +193,32 @@ const ThoughtForm = (props) => {
             <Rating value={thoughtRating} onChange={setThoughtRating}/>
 
             
+            {props.edit 
 
-            <div className="col-12 col-lg-3">
-              <button className="btn btn-primary btn-block py-3" type="submit">
-                {props.edit ? `Update` : `Add`} Review
-              </button>
-            </div>
+              ? <>
+                  <div className="col-12 col-lg-3">
+                    <button className="btn btn-primary btn-block py-3" onClick={handleFormSubmitEdit}>
+                      Update Review
+                    </button>
+                  </div>
+                  <div className="col-12 col-lg-3">
+                    <button className="btn btn-primary btn-block py-3" onClick={handleDelete}>
+                     Delete Review
+                    </button>
+                  </div>
+                </>
+
+              : <>
+                  <div className="col-12 col-lg-3">
+                    <button className="btn btn-primary btn-block py-3" onClick={handleFormSubmitAdd}>
+                      Add Review
+                    </button>
+                  </div>
+                </>
+
+              }
+            
+
             {error && (
               <div className="col-12 my-3 bg-danger text-white p-3">
                 {error.message}
