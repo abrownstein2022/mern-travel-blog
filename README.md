@@ -24,35 +24,34 @@ The task for this assignment was to build a responsive, interactive application 
 **User Story**
 ```md
 As a person who loves to travel
-I want a website to create reviews to share my travel experiences and learn from the travel experiences of others
+I want to share my travel experiences and learn from others’ travel experiences
 SO THAT I can plan my future travel destinations
-
 ```
-
 **Acceptance Criteria**
 
 ```md
 GIVEN a MERN-stack single-page application
 WHEN I visit the site for the first time
-THEN I am presented with the homepage, which includes existing reviews if any have been posted, and navigation buttons to login or signup
+THEN I am presented with the homepage, which includes all existing reviews, as well as homepage links and navigation buttons to log in or sign up
 WHEN I choose to sign up
-THEN I am prompted to enter my email address, username and password, and then I am logged into the site
+THEN I am prompted to enter my email address, username and password, 
+WHEN I complete the sign up process
+THEN I am automatically logged into the site
 WHEN I revisit the site at a later time and choose to log in
-THEN I am prompted to enter my email and password
-WHEN I am signed in to the site
-THEN I am taken to the homepage with a profile button with my username on it, a logout button, a screen to add a new review,
-WHEN I enter data in click on the Add Review button to create a new review
-THEN all my review data is saved and I am taken back to my profile page and can see the new review I just created
-WHEN I click on my profile button,
-THEN I am presented with a dashboard that displays any reviews I have already created (if any)
-WHEN I click on the "Edit this Review" link on my existing reviews
-THEN I am presented with an update screen so I can change my review or I can delete the review entirely
-WHEN I click on the Add Review button
-THEN I see all the information fields for which I can enter data, including rating the place I am reviewing
-
+THEN I am prompted to enter my email and password 
+WHEN I am signed into the site
+THEN I am taken to the homepage that displays existing reviews, with a user profile button, a logout button and a screen to add a new review,
+WHEN I enter data into the new review screen and click on the Add Review button
+THEN the homepage is refreshed so I see my new review data has been saved
+WHEN I click on my profile button in the navigation,
+THEN I am presented with a dashboard that displays any reviews I have already created
+WHEN I click on the "Edit this Review" link on any of my existing reviews
+THEN I am presented with a new screen so I can change my review or I can delete the review entirely
 WHEN I click on the delete review button
-THEN I am able to delete my review and am taken back to my updated profile page
-WHEN I click on the logout option in the navigation
+THEN I am able to delete my review
+WHEN I return to my profile page
+THEN I see my deleted review no longer exists
+WHEN I click on the logout button in the navigation
 THEN I am signed out of the site
 WHEN I logged in but am idle on the site for more than 5 minutes
 THEN I am automatically logged out and must log in again to be able to add new reviews and update/delete my existing reviews
@@ -97,8 +96,8 @@ $ npm run develop
 ```
 
 **The screenshots below show the functionality of the application:**<br>
-Homepage opens for all users showing all posts and comments but no one can update data without logging in.
-![example image 1 homepage](./public/images/ch14-screen1-homepage.png)
+Homepage opens for all users showing all blog reviews but no one can create reviews, or update or delete their own reviews without logging in.
+![example image 1 homepage](./client/src/images/travel-blog1-homepage.png)
 
 User must register on the website to enter posts, update and delete their posts, and add comments to other user posts.
 ![example image 2 signup or login](./public/images/ch14-screen2-signup-or-login.png)

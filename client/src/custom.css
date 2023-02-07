@@ -1,6 +1,6 @@
 #main-header {
     background-color: #A1d4f3 !important;
-    background-image: url(../src/travel-image2.png);
+    background-image: url(../src/images/airplane-image-header.png);
     background-repeat: no-repeat;
     background-size: 30% auto;
     background-position: 5% bottom;
@@ -20,6 +20,12 @@
     padding: 0;
     padding-left: max(16rem, 20vw);
     margin-bottom: 2rem;
+}
+
+/* alexis 2/7/23 login and signup screen headers */
+#minor-header {
+    color:#A1d4f3;
+
 }
 
 /* max width means apply these styles to all sizes less than or equal to 992 (mobile) */
