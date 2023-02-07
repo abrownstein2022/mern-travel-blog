@@ -1,42 +1,50 @@
 [
   {
-    "thoughtText": "Everyone knows that debugging is twice as hard as writing a program in the first place. So if you're as clever as you can be when you write it, how will you ever debug it?",
-    "thoughtAuthor": "Brian Kernighan"
+    "thoughtCountry": "France",
+    "thoughtCity": "Nice",
+    "thoughtLandmark": "",
+    "thoughtText": "Nice has a milder climate and sometimes even reaches 70 in the winter.",
+    "thoughtRating": 4,
+    "thoughtAuthor": "alexis"
   },
   {
-    "thoughtText": "Some of the best programming is done on paper, really. Putting it into the computer is just a minor detail.",
-    "thoughtAuthor": "Max Kanat-Alexander"
+    "thoughtCountry": "France",
+    "thoughtCity": "Paris",
+    "thoughtLandmark": "Eiffel Tower",
+    "thoughtText": "The Eiffel Tower is so beautiful when it is lit at night!",
+    "thoughtRating": 5,
+    "thoughtAuthor": "justin"
   },
   {
-    "thoughtText": "When you don't create things, you become defined by your tastes rather than ability. Your tastes only narrow & exclude people. So create.",
-    "thoughtAuthor": "Why The Lucky Stiff"
+    "thoughtCountry": "Morocco",
+    "thoughtCity": "Chefchouen",
+    "thoughtLandmark": "",
+    "thoughtText": "I understand why it is called the blue city!  So many beautiful shades of blue on the building and walkways with murals too!",
+    "thoughtRating": 5,
+    "thoughtAuthor": "alexis"
   },
   {
-    "thoughtText": "I'm not a great programmer; I'm just a good programmer with great habits.",
-    "thoughtAuthor": "Kent Beck"
+    "thoughtCountry": "Costa Rica",
+    "thoughtCity": "Punta Cana",
+    "thoughtLandmark": "",
+    "thoughtText": "Beautiful country but the roads can be really tough to use because they are not paved.",
+    "thoughtRating": 3,
+    "thoughtAuthor": "mike"
   },
   {
-    "thoughtText": "Walking on water and developing software from a specification are easy if both are frozen.",
-    "thoughtAuthor": "Edward V. Berard"
+    "thoughtCountry": "England",
+    "thoughtCity": "London",
+    "thoughtLandmark": "",
+    "thoughtText": "Fish & Chips - yummy!  Many beautiful sites to see and, of course, there's the royal family!",
+    "thoughtRating": 4,
+    "thoughtAuthor": "mike"
   },
   {
-    "thoughtText": "The most disastrous thing that you can ever learn is your first programming language.",
-    "thoughtAuthor": "Alan Kay"
-  },
-  {
-    "thoughtText": "The most important property of a program is whether it accomplishes the intention of its user.",
-    "thoughtAuthor": "C.A.R. Hoare"
-  },
-  {
-    "thoughtText": "Delivering good software today is often better than perfect software tomorrow, so finish things and ship.",
-    "thoughtAuthor": "David Thomas"
-  },
-  {
-    "thoughtText": "If you optimize everything, you will always be unhappy.",
-    "thoughtAuthor": "Donald Knuth"
-  },
-  {
-    "thoughtText": "It's not a bug; it's an undocumented feature.",
-    "thoughtAuthor": "Lernantino"
+    "thoughtCountry": "Cuba",
+    "thoughtCity": "Trinidad",
+    "thoughtLandmark": "",
+    "thoughtText": "Colorful town with beautiful weather and people, wonderful restaurants and plenty of shops and music all around!",
+    "thoughtRating": 5,
+    "thoughtAuthor": "justin"
   }
 ]

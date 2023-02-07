@@ -48,10 +48,13 @@ const resolvers = {
 
       return { token, user };
     },
-    addThought: async (parent, { thoughtText }, context) => {
+    addThought: async (parent, args, context) => {
+      console.log('adding thought:', {
+        args
+      })
       if (context.user) {
         const thought = await Thought.create({
-          thoughtText,
+          ...args,
           thoughtAuthor: context.user.username,
         });
 
@@ -64,25 +67,66 @@ const resolvers = {
       }
       throw new AuthenticationError('You need to be logged in!');
     },
-    addComment: async (parent, { thoughtId, commentText }, context) => {
-      if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          {
-            $addToSet: {
-              comments: { commentText, commentAuthor: context.user.username },
-            },
-          },
-          {
+
+    updateThought: async (parent, args, context) => {
+      console.log('updating thought:', {
+        args
+      })
+
+      // orignal way
+      // if(hasUser){
+      //   // do stuff
+      // }
+
+      // // new guard block way
+      // if(!hasUser) return
+      // if(!hasNamer) return
+      // if(!hasTitle) return
+
+      if (!context.user)  throw new AuthenticationError('You must be logged in to update reviews!');
+
+
+
+
+
+
+        try{
+
+          console.log('updating thought in db...')
+          //~ MONGOOOSE DOES NOT USE THE { where: {} } OPERATOR
+          //~ SEQUELIZE DOES
+          const thought = await Thought.findOneAndUpdate({ _id: args.thoughtId }, {
+            ...args,
+            thoughtAuthor: context.user.username,
+          },{
             new: true,
-            runValidators: true,
+            returnDocument: 'after',
+          });
+
+
+          if(!thought){
+            console.log('No thought was returned:', thought)
           }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
+          
+          console.log('updating user thoughts in db...')
+            await User.findOneAndUpdate(
+              { _id: context.user._id },
+              { $addToSet: { thoughts: thought._id } }
+            );
+
+          console.log('Yhoughts and user updated!')
+            
+            return thought;
+          }catch(err){
+            console.log(err)
+          }
+      
+
+     
     },
+
     removeThought: async (parent, { thoughtId }, context) => {
-      if (context.user) {
+      if (!context.user)  throw new AuthenticationError('You need to be logged in!');
         const thought = await Thought.findOneAndDelete({
           _id: thoughtId,
           thoughtAuthor: context.user.username,
@@ -93,27 +137,11 @@ const resolvers = {
           { $pull: { thoughts: thought._id } }
         );
 
-        return thought;
-      }
-      throw new AuthenticationError('You need to be logged in!');
+        return true;
+      
+     
     },
-    removeComment: async (parent, { thoughtId, commentId }, context) => {
-      if (context.user) {
-        return Thought.findOneAndUpdate(
-          { _id: thoughtId },
-          {
-            $pull: {
-              comments: {
-                _id: commentId,
-                commentAuthor: context.user.username,
-              },
-            },
-          },
-          { new: true }
-        );
-      }
-      throw new AuthenticationError('You need to be logged in!');
-    },
+
   },
 };
 

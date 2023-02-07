@@ -25,32 +25,69 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_THOUGHT = gql`
-  mutation addThought($thoughtText: String!) {
-    addThought(thoughtText: $thoughtText) {
+  mutation addThought($thoughtText: String!, $thoughtCountry: String!, $thoughtCity: String!, $thoughtLandmark: String!, $thoughtRating: Int!) {
+    addThought(thoughtText: $thoughtText, thoughtCountry: $thoughtCountry, thoughtCity: $thoughtCity, thoughtLandmark: $thoughtLandmark, thoughtRating: $thoughtRating) {
       _id
       thoughtText
       thoughtAuthor
+      thoughtCountry
+      thoughtCity
+      thoughtLandmark
+      thoughtRating
       createdAt
-      comments {
-        _id
-        commentText
-      }
+     
     }
   }
 `;
 
-export const ADD_COMMENT = gql`
-  mutation addComment($thoughtId: ID!, $commentText: String!) {
-    addComment(thoughtId: $thoughtId, commentText: $commentText) {
-      _id
-      thoughtText
-      thoughtAuthor
-      createdAt
-      comments {
-        _id
-        commentText
-        createdAt
-      }
-    }
+export const UPDATE_THOUGHT =
+//  gql`
+//   mutation updateThought($thoughtId: String!, $thoughtText: String!, $thoughtCountry: String!, $thoughtCity: String!, $thoughtLandmark: String!, $thoughtRating: Int!) {
+//     updateThought(thoughtId: $thoughtId, thoughtText: $thoughtText, thoughtCountry: $thoughtCountry, thoughtCity: $thoughtCity, thoughtLandmark: $thoughtLandmark, thoughtRating: $thoughtRating) {
+//       _id
+//       thoughtText
+//       thoughtCountry
+//       thoughtCity
+//       thoughtLandmark
+//       thoughtRating
+//       createdAt
+     
+//     }
+//   }
+// `;
+
+gql`
+mutation UpdateThought(
+  $thoughtId: ID!, 
+  $thoughtText: String!, 
+  $thoughtCountry: String!, 
+  $thoughtCity: String!, 
+  $thoughtLandmark: String!, 
+  $thoughtRating: Int!
+  ) {
+  updateThought(
+    thoughtId: $thoughtId, 
+    thoughtText: $thoughtText, 
+    thoughtCountry: $thoughtCountry, 
+    thoughtCity: $thoughtCity, 
+    thoughtLandmark: $thoughtLandmark, 
+    thoughtRating: $thoughtRating) {
+    _id
+    createdAt
+    thoughtAuthor
+    thoughtCity
+    thoughtCountry
+    thoughtLandmark
+    thoughtRating
+    thoughtText
   }
-`;
+}`
+
+
+export const REMOVE_THOUGHT = gql`
+mutation RemoveThought($thoughtId: ID!) {
+  removeThought(thoughtId: $thoughtId) {
+    _id
+  }
+}
+`

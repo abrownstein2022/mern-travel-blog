@@ -353,6 +353,7 @@ body {
   min-height: 100%;
 }
 
+/* alexis 2/2/23 added background-color */
 body {
   margin: 0;
   padding: 0;
@@ -361,6 +362,7 @@ body {
     'Segoe UI Symbol';
   font-size: 16px;
   color: #1a1a1a;
+  background-color: #f3f1f7 !important;
 }
 
 h1,
@@ -899,7 +901,9 @@ a:hover {
 }
 
 .text-light {
-  color: #d9e9e8 !important;
+  /* color: #d9e9e8 !important; */
+  color: black !important;
+  font-weight:bolder;
 }
 
 .text-dark {
@@ -919,8 +923,16 @@ a:hover {
 }
 
 /* BACKGROUND UTILS */
+/* alexis 2/2/23 */
 .bg-primary {
-  background-color: #2d3e50 !important;
+  background-color: #A1d4f3 !important;
+  /* background-image: url(../src/travel-image2.png);
+  background-repeat: no-repeat;
+  background-size: 600px 300px; */
+}
+/* alexis 2/2/23 */
+.bg-primary2 {
+  background-color: #A1d4f3 !important;
 }
 
 .bg-info {
@@ -940,7 +952,7 @@ a:hover {
 }
 
 .bg-white {
-  background-color: #ffffff !important;
+   background-color: #ffffff !important; 
 }
 
 .bg-black {

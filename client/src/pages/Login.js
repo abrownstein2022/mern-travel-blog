@@ -7,7 +7,7 @@ import Auth from '../utils/auth';
 
 const Login = (props) => {
   const [formState, setFormState] = useState({ email: '', password: '' });
-  const [login, { error, data }] = useMutation(LOGIN_USER);
+  const [login, { error, data: mutationData }] = useMutation(LOGIN_USER);
 
   // update state based on form input changes
   const handleChange = (event) => {
@@ -24,11 +24,12 @@ const Login = (props) => {
     event.preventDefault();
     console.log(formState);
     try {
-      const { data } = await login({
+      const { data: loginData } = await login({
         variables: { ...formState },
       });
 
-      Auth.login(data.login.token);
+      Auth.login(loginData.login.token);
+      console.log('Logged in as:', mutationData, loginData)
     } catch (e) {
       console.error(e);
     }
@@ -46,7 +47,7 @@ const Login = (props) => {
         <div className="card">
           <h4 className="card-header bg-dark text-light p-2">Login</h4>
           <div className="card-body">
-            {data ? (
+            {mutationData ? (
               <p>
                 Success! You may now head{' '}
                 <Link to="/">back to the homepage.</Link>
