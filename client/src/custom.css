@@ -3,7 +3,7 @@
     background-image: url(../src/travel-image2.png);
     background-repeat: no-repeat;
     background-size: 30% auto;
-    background-position: -20% bottom;
+    background-position: 5% bottom;
     /* make the container a flexbox */
     display: flex;
     /* set the flex dir - refault is row, but watch out for overrides */
@@ -21,8 +21,6 @@
     padding-left: max(16rem, 20vw);
     margin-bottom: 2rem;
 }
-
-
 
 /* max width means apply these styles to all sizes less than or equal to 992 (mobile) */
 @media screen and (max-width: 992px) {
