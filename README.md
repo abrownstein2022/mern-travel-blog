@@ -35,22 +35,21 @@ SO THAT I can plan my future travel destinations
 GIVEN a MERN-stack single-page application
 WHEN I visit the site for the first time
 THEN I am presented with the homepage, which includes existing reviews if any have been posted, and navigation buttons to login or signup
-WHEN I click on the Edit Review button on any existing reviews
-THEN I am taken to a page indicating I must log in or signup
 WHEN I choose to sign up
 THEN I am prompted to enter my email address, username and password, and then I am logged into the site
-WHEN I choose to log in
-THEN my user credentials are saved and I am logged into the site
-WHEN I revisit the site at a later time and choose to sign in
+WHEN I revisit the site at a later time and choose to log in
 THEN I am prompted to enter my email and password
 WHEN I am signed in to the site
-THEN I am taken to my user profile page and presented with a screen to add new reviews or update existing reviews that I created (if any)
+THEN I am taken to the homepage with a profile button with my username on it, a logout button, a screen to add a new review,
+WHEN I enter data in click on the Add Review button to create a new review
+THEN all my review data is saved and I am taken back to my profile page and can see the new review I just created
+WHEN I click on my profile button,
+THEN I am presented with a dashboard that displays any reviews I have already created (if any)
 WHEN I click on the "Edit this Review" link on my existing reviews
 THEN I am presented with an update screen so I can change my review or I can delete the review entirely
 WHEN I click on the Add Review button
 THEN I see all the information fields for which I can enter data, including rating the place I am reviewing
-WHEN I click on the Add Review button to create a new review
-THEN all my review data is saved and I am taken back to my profile page and can see the new review I just created
+
 WHEN I click on the delete review button
 THEN I am able to delete my review and am taken back to my updated profile page
 WHEN I click on the logout option in the navigation
