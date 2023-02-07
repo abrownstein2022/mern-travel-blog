@@ -2,7 +2,7 @@
 ![license](https://img.shields.io/badge/license-MIT-black)
 
 Deployed site on Heroku:
-https://cms-tech-blog.herokuapp.com/ ******************************update this************
+I am still working on this deployment although the project is complete and runs fine locally
      
 ## Table of Contents
 
@@ -18,7 +18,7 @@ https://cms-tech-blog.herokuapp.com/ ******************************update this**
 
 ## Description
 ```md
-The task for this assignment was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) for authentication.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  The application was deployed to Heroku with seed data.
+This project was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) for authentication.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  The application was deployed to Heroku with seed data.
 ```
 
 **User Story**
@@ -60,10 +60,10 @@ THEN I am automatically logged out and must log in again to be able to add new r
 ## Installation  (if you are going to clone my repo)
 <!-- audience is other developers -->
 
-1. Clone this GitHub repo https://github.com/abrownstein2022/react-travel-blog  ***change to MERN-travel-blog****
+1. Clone this GitHub repo https://github.com/abrownstein2022/mern-travel-blog 
 <!-- Check out the gh cli tool from github -->
 ```bash  
-$ gh repo clone https://github.com/abrownstein2022/react-travel-blog   ***change to MERN-travel-blog****
+$ gh repo clone https://github.com/abrownstein2022/mern-travel-blog  
 ```
 
 2. From the terminal, install npm:
@@ -77,12 +77,12 @@ $ npm i
 
 
 ## Usage  
-This application has been deployed on Heroku and has initial seed data.  Click on the Heroku link below to start the application.  Or clone and use from your vs-code.
+This application will be deployed on Heroku with initial seed data.  Click on the Heroku link below to start the application.  Or clone and use from your vs-code.
 
-1. Open the app using Heroku https://XXXXXXXX.herokuapp.com *******************************update this
+1. Open the app using Heroku (still working on Heroku deployment)
 
 
-Or to run in terminal with 2 terminal sessions
+Or to run localling, create 2 terminal sessions in VS Code
 
 First terminal session to run MongoDB/Mongoose ODM
 ```bash
@@ -99,45 +99,47 @@ $ npm run develop
 Homepage opens for all users showing all blog reviews but no one can create reviews, or update or delete their own reviews without logging in.
 ![example image 1 homepage](./client/src/images/travel-blog1-homepage.png)
 
-User must register on the website to enter posts, update and delete their posts, and add comments to other user posts.
-![example image 2 signup or login](./public/images/ch14-screen2-signup-or-login.png)
+User must register on the website to enter reviews, update and delete their reviews.
+![example image 2 signup or login](./client/src/images/travel-blog1-homepage.png)
 
 New user signup.
-![example image 3 new user signup](./public/images/ch14-screen3-new-user-signup.png)
+![example image 3 new user signup](./client/src/images/travel-blog1-homepage.png)
 
 Dashboard displays after user login, showing the logged in user's posts.
-![example image 4 new user dashboard](./public/images/ch14-screen4-new-user-dashboard.png)
+![example image 4 new user dashboard](./client/src/images/travel-blog1-homepage.png)
 
 New user's first blog post.
-![example image 5 new user first blog post](./public/images/ch14-screen5-new-user-first-blog-post.png)
+![example image 5 new user first blog post](./client/src/images/travel-blog1-homepage.png)
 
 New user's second blog post.
-![example image 6 new user dashboard after first blog post](./public/images/ch14-screen6-new-user-dashboard-after-first-blog-post.png)
+![example image 6 new user dashboard after first blog post](./client/src/images/travel-blog1-homepage.png)
 
 Dashboard display of new user after 2 new posts added.
-![example image 7 dashboard after blog post 2](./public/images/ch14-screen7-dashboard-after-post-2.png)
+![example image 7 dashboard after blog post 2](./client/src/images/travel-blog1-homepage.png)
 
 New user comments on another user's post.
-![example image 8 comment on another post](./public/images/ch14-screen8-comment-on-another-post.png)
+![example image 8 comment on another post](./client/src/images/travel-blog1-homepage.png)
 
 Homepage display after new user entered comments on another user's post.
-![example image 9 comment on someone else's post](./public/images/ch14-screen9-comment-on-someone-elses-post.png)
+![example image 9 comment on someone else's post](./client/src/images/travel-blog1-homepage.png)
 
 Display posted comment.
-![example image 10 posted comment](./public/images/ch14-screen10-posted-comment.png)
+![example image 10 posted comment](./client/src/images/travel-blog1-homepage.png)
 
 New user updates their own post.
-![example image 11 update data](./public/images/ch14-screen11-update-data.png)
+![example image 11 update data](./client/src/images/travel-blog1-homepage.png)
 
 Display shows latest update works.
-![example image 12 update screen works](./public/images/ch14-screen12-update-works.png)
+![example image 12 update screen works](./client/src/images/travel-blog1-homepage.png)
 
 The new user deletes one of their posts.<br>
-![example image 13 delete post](./public/images/ch14-screen13-delete-post.png)
+![example image 13 delete post](./client/src/images/travel-blog1-homepage.png)
 
 Display dashboard after new post has been deleted.
-![example image 14 dashboard after delete own post](./public/images/ch14-screen14-dashboard-after-delete.png)
+![example image 14 dashboard after delete own post](./client/src/images/travel-blog1-homepage.png)
   
+Display dashboard after new post has been deleted.
+![example image 15 page after user logs out](./client/src/images/travel-blog15-after-click-logout-button.png)
 
 ## Credits
 
