@@ -2,7 +2,7 @@
 ![license](https://img.shields.io/badge/license-MIT-black)
 
 Deployed site on Heroku:
-I am still working on this deployment although the project is complete and runs fine locally
+https://mern-travel-blog.herokuapp.com/
      
 ## Table of Contents
 
@@ -79,8 +79,8 @@ $ npm i
 ## Usage  
 This application will be deployed on Heroku with initial seed data.  Click on the Heroku link below to start the application.  Or clone and use from your vs-code.
 
-1. Open the app using Heroku (still working on Heroku deployment)
-
+1. Open the app using Heroku 
+https://mern-travel-blog.herokuapp.com/
 
 Or to run localling, create 2 terminal sessions in VS Code
 
@@ -96,55 +96,55 @@ $ npm run develop
 ```
 
 **The screenshots below show the functionality of the application:**<br>
-Homepage opens for all users showing all blog reviews but no one can create reviews, or update or delete their own reviews without logging in.
+Homepage opens for all users showing all blog reviews but no one can create reviews, or update or delete their own reviews without logging in.<br>
 ![example image 1 homepage](./client/src/images/travel-blog1-homepage.png)
 
-User must register on the website to enter reviews, update and delete their reviews.
-![example image 2 signup or login](./client/src/images/travel-blog1-homepage.png)
+User must register on the website to create new reviews, and update or delete their existing reviews<br>
+![example image 2 signup screen](./client/src/images/travel-blog2-signup.png)
 
-New user signup.
-![example image 3 new user signup](./client/src/images/travel-blog1-homepage.png)
+New user signup with data<br>
+![example image 3 new user signup with data](./client/src/images/travel-blog3-signup-with-data.png)
 
-Dashboard displays after user login, showing the logged in user's posts.
-![example image 4 new user dashboard](./client/src/images/travel-blog1-homepage.png)
+Homepage after user signup<br>
+![example image 4 homepage after user signup](./client/src/images/travel-blog4-homepage-after-signup.png)
 
-New user's first blog post.
-![example image 5 new user first blog post](./client/src/images/travel-blog1-homepage.png)
+Travel blog login screen<br>
+![example image 5 travel blog login screen](./client/src/images/travel-blog5-login.png)
 
-New user's second blog post.
-![example image 6 new user dashboard after first blog post](./client/src/images/travel-blog1-homepage.png)
+New user homepage after first blog post<br>
+![example image 6 new user homepage after first blog post](./client/src/images/travel-blog6-homepage-after-login.png)
 
-Dashboard display of new user after 2 new posts added.
-![example image 7 dashboard after blog post 2](./client/src/images/travel-blog1-homepage.png)
+Travel blog add review screen before save<br>
+![example image 7 travel blog add review screen before save](./client/src/images/travel-blog7-add-review-before-save.png)
 
-New user comments on another user's post.
-![example image 8 comment on another post](./client/src/images/travel-blog1-homepage.png)
+Add review screen after save<br>
+![example image 8 add review screen after save](./client/src/images/travel-blog8-add-review-after-save.png)
 
-Homepage display after new user entered comments on another user's post.
-![example image 9 comment on someone else's post](./client/src/images/travel-blog1-homepage.png)
+Travel blog click user profile button to see user dashboard<br>
+![example image 9 click user profile button to see user dashboard](./client/src/images/travel-blog9-click-user-profile-button.png)
 
-Display posted comment.
-![example image 10 posted comment](./client/src/images/travel-blog1-homepage.png)
+Travel blog screen after click user profile button<br>
+![example image 10 travel blog screen after click user profile button](./client/src/images/travel-blog10-after-click-user-profile-button.png)
 
-New user updates their own post.
-![example image 11 update data](./client/src/images/travel-blog1-homepage.png)
+Travel blog screen after update existing review<br>
+![example image 11 travel blog screen after update existing review](./client/src/images/travel-blog11-after-update-existing-review.png)
 
-Display shows latest update works.
-![example image 12 update screen works](./client/src/images/travel-blog1-homepage.png)
+Dashboard display after update existing review and save<br>
+![example image 12 dashboard display after update existing review and save](./client/src/images/travel-blog12-dashboard-after-update-existing-review-save.png)
 
-The new user deletes one of their posts.<br>
-![example image 13 delete post](./client/src/images/travel-blog1-homepage.png)
+Travel blog screen before deleting existing review<br>
+![example image 13 travel blog before deleting existing review](./client/src/images/travel-blog13-before-delete-existing-review.png)
 
-Display dashboard after new post has been deleted.
-![example image 14 dashboard after delete own post](./client/src/images/travel-blog1-homepage.png)
+Display dashboard after new travel review has been deleted<br>
+![example image 14 dashboard after delete own post](./client/src/images/travel-blog14-dashboard-after-delete-existing-review.png)
   
-Display dashboard after new post has been deleted.
+Travel blog screen after user clicks on logout button<br>
 ![example image 15 page after user logs out](./client/src/images/travel-blog15-after-click-logout-button.png)
 
 ## Credits
 
 ```md
-Alexis Brownstein, Bootcamp tutor: Phil, Wyzant tutor: Mike
+Alexis Brownstein, Bootcamp tutor: Phil, Wyzant tutor: Mike, Bootcamp teacher and TA's
 ```
 
 ## License
@@ -188,7 +188,9 @@ Features for *future* development
 1. Necessary MERN folder structure and setup with client/server 
 1. Professional README
 1. User credentials saved to log into the site
-1. Timeout after 5 minutes of inactivity
+1. Login times out after 5 minutes of inactivity
+1. Responsive layout
+1. Attractive and easy-to-follow layout
 ## How-to-Contribute
 
 N/A
@@ -204,6 +206,6 @@ I can be reached at alexis@drdatabase.com.
 
 This GitHub repo can be found at:
   
-https://github.com/abrownstein2022/react-travel-blog  ***change to MERN-travel-blog****
+https://github.com/abrownstein2022/mern-travel-blog
 
 
