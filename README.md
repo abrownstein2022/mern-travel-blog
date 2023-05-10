@@ -1,8 +1,5 @@
 # MERN Travel Blog
 ![license](https://img.shields.io/badge/license-MIT-black)
-
-Deployed site on Heroku:
-https://mern-travel-blog.herokuapp.com/
      
 ## Table of Contents
 
@@ -18,13 +15,13 @@ https://mern-travel-blog.herokuapp.com/
 
 ## Description
 ```md
-This project was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) for authentication.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  The application was deployed to Heroku with seed data.
+This project was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) for authentication.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  .
 ```
 
 **User Story**
 ```md
 As a person who loves to travel
-I want to share my travel experiences and learn from others’ travel experiences
+I want to share my travel experiences and learn from the travel experiences of others
 SO THAT I can plan my future travel destinations
 ```
 **Acceptance Criteria**
@@ -77,12 +74,8 @@ $ npm i
 
 
 ## Usage  
-This application will be deployed on Heroku with initial seed data.  Click on the Heroku link below to start the application.  Or clone and use from your vs-code.
 
-1. Open the app using Heroku 
-https://mern-travel-blog.herokuapp.com/
-
-Or to run localling, create 2 terminal sessions in VS Code
+To run locally, create 2 terminal sessions in VS Code
 
 First terminal session to run MongoDB/Mongoose ODM
 ```bash
@@ -183,7 +176,7 @@ _underline_
 Features for *future* development
  -->
 **The main features in this project are:**<br> 
-1. MERN stack: uses MongoDB/Mongoose ODM, Express.js, React, Node.js, JWT for authentication, Heroku for deployed website
+1. MERN stack: uses MongoDB/Mongoose ODM, Express.js, React, Node.js, JWT for authentication
 1. Example screenshots with description of application functionality 
 1. Necessary MERN folder structure and setup with client/server 
 1. Professional README
