@@ -15,7 +15,9 @@
 
 ## Description
 ```md
-This project was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) for authentication.  We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and deleting data.  .
+This project was to build a responsive, interactive application using GraphQL with a node.js and express.js server, and JWT (JSON Web Token) 
+for authentication. We used MongoDB and the Mongoose ODM for the database, and queries and mutations for retrieving, adding, updating, and 
+deleting data.
 ```
 
 **User Story**
